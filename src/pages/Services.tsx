@@ -110,7 +110,7 @@ export default function Services() {
                         className="inline-flex items-center gap-3 mb-6 bg-white/10 backdrop-blur-md px-6 py-2 rounded-full border border-white/20"
                     >
                         <div className="h-2 w-2 rounded-full bg-brand-red animate-pulse"></div>
-                        <span className="text-white text-xs font-bold uppercase tracking-widest">Capabilities</span>
+                        <span className="text-white text-xs font-bold uppercase tracking-widest">SB CRANES</span>
                     </motion.div>
                     
                     <motion.h1
