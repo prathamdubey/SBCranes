@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { Download, Facebook, Instagram, Linkedin, MapPin, Mail, Phone } from 'lucide-react';
-import textureBg from '../assets/images/texture_bg.png';
+// import textureBg from '../assets/images/texture_bg.png';
 
 export default function Footer() {
     return (

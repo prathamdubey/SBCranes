@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Star, Truck, ShieldCheck, MapPin, ArrowRight } from 'lucide-react';
+import {Truck, ShieldCheck, MapPin, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 // Using the real images provided by the client
 const heroSlides = [
