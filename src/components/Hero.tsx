@@ -86,11 +86,11 @@ export default function Hero() {
                         opacity: { duration: 1.5, ease: "easeInOut" },
                         scale: { duration: 8, ease: "linear" }
                     }}
-                    className="absolute inset-0 z-0 bg-cover bg-center brightness-[0.85] contrast-[1.1] saturate-[1.2] transition-all duration-1000"
+                    className="absolute inset-0 z-0 bg-cover bg-center brightness-100 contrast-[1.1] saturate-[1.2] transition-all duration-1000"
                     style={{ backgroundImage: `url("${heroSlides[currentSlideIndex].image}")` }}
                 />
             </AnimatePresence>
-            <div className="absolute inset-0 z-0 bg-black/60" /> {/* Darker overlay for better text contrast */}
+            <div className="absolute inset-0 z-0 bg-black/40" /> {/* Darker overlay for better text contrast */}
             <div className="absolute inset-0 z-0 bg-gradient-to-t from-dark-slate via-transparent to-transparent" /> {/* Smoother bottom fade */}
 
             {/* Main Content */}

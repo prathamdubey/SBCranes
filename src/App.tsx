@@ -9,6 +9,7 @@ import Services from './pages/Services';
 import About from './pages/About';
 import Fleet from './pages/Fleet';
 import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
 import Careers from './pages/Careers';
 import SpecSheet from './pages/SpecSheet';
 import Resources from './pages/Resources';
@@ -31,6 +32,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/fleet" element={<Fleet />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/project/:id" element={<ProjectDetail onOpenModal={() => setIsModalOpen(true)} />} />
           <Route path="/careers" element={<Careers />} />
 
           <Route path="/resources" element={<Resources />} />

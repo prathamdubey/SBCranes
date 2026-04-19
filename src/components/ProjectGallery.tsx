@@ -9,6 +9,7 @@ export default function ProjectGallery() {
     const projects = [
         {
             id: 1,
+            slug: "hmel-refinery",
             title: "HMEL Refinery",
             category: "Oil & Gas",
 
@@ -19,6 +20,7 @@ export default function ProjectGallery() {
         },
         {
             id: 2,
+            slug: "stadium-roof-lift",
             title: "Stadium Roof Lift",
             category: "Infrastructure",
             image: stadiumImg,
@@ -28,6 +30,7 @@ export default function ProjectGallery() {
         },
         {
             id: 3,
+            slug: "wind-farm-logistics",
             title: "Wind Farm Logistics",
             category: "Wind Energy",
             image: windImg,
@@ -37,6 +40,7 @@ export default function ProjectGallery() {
         },
         {
             id: 4,
+            slug: "tower-crane-erection",
             title: "Tower Crane Erection",
             category: "Construction",
             image: towerCraneImg,
@@ -62,7 +66,7 @@ export default function ProjectGallery() {
                 <div className="flex flex-col gap-6 md:hidden">
                     {projects.map((project, index) => (
                         <Link
-                            to="/projects"
+                            to={`/project/${project.slug}`}
                             key={project.id}
                             className="group flex items-stretch bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg hover:border-brand-red transition-all duration-300"
                         >
@@ -83,7 +87,7 @@ export default function ProjectGallery() {
                 <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-4 h-[600px]">
                     {projects.map((project) => (
                         <Link
-                            to="/projects"
+                            to={`/project/${project.slug}`}
                             key={project.id}
                             className={`group relative overflow-hidden bg-gray-800 block ${project.desktopClasses}`}
                         >
