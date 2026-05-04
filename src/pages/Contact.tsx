@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
 import heroBg from '../assets/images/hero_bg.png';
+import logo from '../assets/images/logo.png';
 
 export default function Contact() {
     return (
@@ -95,7 +96,15 @@ export default function Contact() {
                     {/* Right Column: Contact Form */}
                     <div className="w-full lg:w-1/2">
                         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 lg:p-10">
-                            <h3 className="text-2xl font-bold uppercase font-header text-dark-slate mb-6">Send us a Message</h3>
+                            <div className="mb-8 flex items-center gap-4 border-b border-gray-100 pb-6">
+                                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-gray-100 bg-white p-2 shadow-md">
+                                    <img src={logo} alt="SB Cranes logo" className="h-full w-full object-contain" />
+                                </div>
+                                <div>
+                                    <span className="text-[10px] font-black uppercase tracking-[0.24em] text-brand-red">SB Cranes</span>
+                                    <h3 className="text-2xl font-black uppercase font-header tracking-tight text-dark-slate">Send us a Message</h3>
+                                </div>
+                            </div>
 
                             <form className="space-y-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -126,7 +135,7 @@ export default function Contact() {
 
                                 <div>
                                     <label className="block text-xs font-bold uppercase text-gray-500 mb-2">Message</label>
-                                    <textarea rows={4} className="w-full bg-gray-50 border-b-2 border-gray-200 p-3 focus:outline-none focus:border-brand-red transition-colors" placeholder="How can we help you?"></textarea>
+                                    <textarea rows={6} className="w-full rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm leading-relaxed text-dark-slate shadow-inner outline-none transition-all placeholder:text-gray-400 focus:border-brand-red focus:bg-white focus:ring-4 focus:ring-brand-red/10" placeholder="Tell us about the lift location, load details, timeline, and any site constraints."></textarea>
                                 </div>
 
                                 <button type="button" className="w-full bg-industrial-blue text-white font-bold uppercase tracking-widest py-4 hover:bg-black transition-colors flex items-center justify-center gap-2 mt-4">

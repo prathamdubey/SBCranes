@@ -1,9 +1,18 @@
 import { useState, useEffect } from 'react';
-import {Truck, ShieldCheck, MapPin, ArrowRight } from 'lucide-react';
+import { Truck, ShieldCheck, MapPin, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-// Using the real images provided by the client
+// Using the real video and images provided by the client
 const heroSlides = [
     {
+        type: 'video',
+        src: '/updated_images/vid3.mp4',
+        topText: 'SB Cranes',
+        highlightText: 'Engineered',
+        bottomText: 'for critical lifts.',
+        desc: 'Premium crane rental, heavy lifting, erection, and ODC transport support for infrastructure and industrial projects across India.'
+    },
+    {
+        type: 'image',
         image: '/updated_images/hero1.jpg',
         topText: 'Engineered for',
         highlightText: 'Precision Lifts',
@@ -11,6 +20,7 @@ const heroSlides = [
         desc: 'Crane rental, heavy lifting, erection, and ODC transportation for infrastructure and industrial projects across India.'
     },
     {
+        type: 'image',
         image: '/updated_images/hero2.webp',
         topText: 'Unmatched scale.',
         highlightText: 'Absolute Safety',
@@ -18,6 +28,7 @@ const heroSlides = [
         desc: 'Deploying India\'s most modern fleet of crawler and mobile cranes directly to your most challenging sites.'
     },
     {
+        type: 'image',
         image: '/updated_images/hero3.jpg',
         topText: 'Driving India\'s',
         highlightText: 'Infrastructure',
@@ -25,6 +36,7 @@ const heroSlides = [
         desc: 'Trusted by top EPC contractors to deliver reliable lifting solutions on strict timelines without compromise.'
     },
     {
+        type: 'image',
         image: '/updated_images/hero4.jpg',
         topText: 'Performance &',
         highlightText: 'Reliability',
@@ -35,6 +47,7 @@ const heroSlides = [
 
 export default function Hero() {
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+    const currentSlide = heroSlides[currentSlideIndex];
 
     const features = [
         {
@@ -68,33 +81,50 @@ export default function Hero() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentSlideIndex((prev) => (prev + 1) % heroSlides.length);
+            setCurrentSlideIndex((prev) => (prev >= heroSlides.length - 1 ? 1 : prev + 1));
         }, 8000); // Change bg every 8 seconds
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className="relative h-screen w-full overflow-hidden bg-dark-slate">
+        <div className="relative min-h-[760px] h-[100svh] w-full overflow-hidden bg-dark-slate sm:min-h-[720px]">
             {/* Background Slideshow */}
             <AnimatePresence initial={false}>
-                <motion.div
-                    key={currentSlideIndex}
-                    initial={{ scale: 1.1, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                        opacity: { duration: 1.5, ease: "easeInOut" },
-                        scale: { duration: 8, ease: "linear" }
-                    }}
-                    className="absolute inset-0 z-0 bg-cover bg-center brightness-100 contrast-[1.1] saturate-[1.2] transition-all duration-1000"
-                    style={{ backgroundImage: `url("${heroSlides[currentSlideIndex].image}")` }}
-                />
+                {currentSlide.type === 'video' ? (
+                    <motion.video
+                        key={currentSlideIndex}
+                        initial={{ opacity: 0, scale: 1.04 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.2, ease: "easeInOut" }}
+                        className="absolute inset-0 z-0 h-full w-full object-cover  contrast-[1.18] saturate-[1.28]"
+                        src={currentSlide.src}
+                        autoPlay
+                        muted
+                        playsInline
+                        loop
+                        preload="metadata"
+                    />
+                ) : (
+                    <motion.div
+                        key={currentSlideIndex}
+                        initial={{ scale: 1.08, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{
+                            opacity: { duration: 1.2, ease: "easeInOut" },
+                            scale: { duration: 8, ease: "linear" }
+                        }}
+                        className="absolute inset-0 z-0 bg-cover bg-center contrast-[1.22] saturate-[1.35] transition-all duration-1000"
+                        style={{ backgroundImage: `url("${currentSlide.image}")` }}
+                    />
+                )}
             </AnimatePresence>
-            <div className="absolute inset-0 z-0 bg-black/40" /> {/* Darker overlay for better text contrast */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-t from-dark-slate via-transparent to-transparent" /> {/* Smoother bottom fade */}
+            <div className="absolute inset-0 z-0 bg-gradient-to-r from-dark-slate/85 via-dark-slate/35 to-black/10" />
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-dark-slate via-dark-slate/20 to-transparent" />
 
             {/* Main Content */}
-            <div className="relative z-10 flex h-full flex-col justify-center pt-20 pb-32"> {/* Centered vertically more, added padding */}
+            <div className="relative z-10 flex h-full flex-col justify-center pt-24 pb-80 sm:pb-52 md:pb-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <AnimatePresence mode="wait">
                         <motion.div
@@ -104,12 +134,16 @@ export default function Hero() {
                             exit={{ opacity: 0, x: 30 }}
                             transition={{ duration: 0.6, ease: "easeInOut" }}
                         >
-                            <h1 className="max-w-4xl text-3xl sm:text-5xl font-bold uppercase leading-none tracking-tighter text-white md:text-6xl drop-shadow-2xl font-header break-words">
-                                {heroSlides[currentSlideIndex].topText} <br />
-                                <span className="text-brand-red">{heroSlides[currentSlideIndex].highlightText}</span> {heroSlides[currentSlideIndex].bottomText}
+                            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-white shadow-lg backdrop-blur-md">
+                                <span className="h-2 w-2 rounded-full bg-brand-red shadow-[0_0_16px_rgba(244,63,94,0.9)]" />
+                                SB Cranes
+                            </div>
+                            <h1 className="max-w-5xl text-4xl font-black uppercase leading-[0.95] tracking-tight text-white drop-shadow-2xl font-header break-words sm:text-6xl md:text-7xl lg:text-8xl">
+                                {currentSlide.topText} <br />
+                                <span className="text-brand-red">{currentSlide.highlightText}</span> {currentSlide.bottomText}
                             </h1>
-                            <p className="mt-6 max-w-lg text-lg font-light text-gray-200 border-l-4 border-brand-red pl-6">
-                                {heroSlides[currentSlideIndex].desc}
+                            <p className="mt-6 max-w-2xl border-l-4 border-brand-red bg-black/25 py-3 pl-5 pr-4 text-base font-medium leading-relaxed text-gray-100 shadow-xl backdrop-blur-sm sm:text-lg">
+                                {currentSlide.desc}
                             </p>
                         </motion.div>
                     </AnimatePresence>
@@ -120,14 +154,14 @@ export default function Hero() {
                     initial={{ y: "100%" }}
                     animate={{ y: 0 }}
                     transition={{ delay: 0.6, duration: 0.6, ease: "circOut" }}
-                    className="absolute bottom-0 left-0 w-full grid grid-cols-1 md:grid-cols-3 border-t border-white/10"
+                    className="absolute bottom-0 left-0 w-full grid grid-cols-1 border-t border-white/10 sm:grid-cols-3"
                 >
                     {features.map((feature, index) => (
                         <div
                             key={index}
                             className={`
-                                group relative flex h-24 items-center justify-between px-8 
-                                bg-industrial-blue/90 border-r border-white/10 overflow-hidden cursor-default transition-all duration-300
+                                group relative flex min-h-24 items-center justify-between px-5 py-4 sm:px-6 lg:px-8 
+                                bg-industrial-blue/95 border-b border-white/10 sm:border-b-0 sm:border-r overflow-hidden cursor-default transition-all duration-300 backdrop-blur-md
                                 before:absolute before:top-0 before:left-0 before:h-full before:w-2 before:transition-all before:duration-300 before:z-0
                                 hover:before:w-full ${feature.sweepColor}
                             `}
@@ -136,8 +170,8 @@ export default function Hero() {
                                 <div className="p-2 bg-white/10 rounded-lg group-hover:bg-black/10 transition-colors duration-300 shrink-0">
                                     {feature.icon}
                                 </div>
-                                <div className="flex-1">
-                                    <h3 className={`text-lg font-bold uppercase tracking-wider text-white font-header leading-tight mb-1 transition-colors duration-300 ${feature.hoverTextColor}`}>
+                                <div className="min-w-0 flex-1">
+                                    <h3 className={`text-base font-black uppercase tracking-wide text-white font-header leading-tight mb-1 transition-colors duration-300 lg:text-lg ${feature.hoverTextColor}`}>
                                         {feature.title}
                                     </h3>
                                     <p className={`text-xs text-gray-300 font-medium tracking-wide transition-colors duration-300 ${feature.subTextColor}`}>

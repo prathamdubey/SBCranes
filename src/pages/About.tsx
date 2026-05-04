@@ -120,7 +120,7 @@ export default function About({ onOpenModal }: AboutProps) {
                     <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
                         <StatItem label="Years of Experience" value={40} />
                         <StatItem label="Cranes & Transport" value={100} />
-                        <StatItem label="Clients Served" value={1000} />
+                        <StatItem label="Major Projects" value={250} />
                         <StatItem label="Pan-India Reach" value={24} suffix="x7" />
                     </div>
                 </motion.div>

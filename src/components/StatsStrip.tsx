@@ -40,9 +40,9 @@ export default function StatsStrip() {
                     {/* Stat 2 */}
                     <div className="group flex flex-col items-center justify-center py-6 md:py-16 hover:bg-white/5 transition-colors duration-300">
                         <div className="text-3xl md:text-6xl font-bold font-header text-white group-hover:text-brand-red transition-colors">
-                            <Counter value={1000} suffix="+" />
+                            <Counter value={250} suffix="+" />
                         </div>
-                        <div className="mt-1 md:mt-2 text-[10px] md:text-sm font-medium uppercase tracking-[0.1em] md:tracking-[0.2em] text-gray-500 group-hover:text-white transition-colors text-center">Clients</div>
+                        <div className="mt-1 md:mt-2 text-[10px] md:text-sm font-medium uppercase tracking-[0.1em] md:tracking-[0.2em] text-gray-500 group-hover:text-white transition-colors text-center">Major Projects</div>
                     </div>
                     {/* Stat 3 */}
                     <div className="group flex flex-col items-center justify-center py-6 md:py-16 hover:bg-white/5 transition-colors duration-300">

@@ -16,7 +16,6 @@ interface ServiceSection {
     image: string;
     overview: string;
     applications: string[];
-    capabilities: string[];
     capacity: string[];
 }
 
@@ -29,7 +28,6 @@ const services: ServiceSection[] = [
         image: heroBg,
         overview: 'Our mobile crane rental services are designed for fast mobilization, flexibility, and high-performance lifting across infrastructure, industrial, and time-sensitive projects. With a modern fleet and experienced operators, SB Cranes ensures safe and efficient execution even in constrained or urban environments.',
         applications: ['Plant installation and maintenance', 'Infrastructure construction', 'Urban construction sites', 'Equipment loading and unloading', 'Emergency and time-critical lifts'],
-        capabilities: ['Road-legal cranes for rapid deployment', 'Quick setup and dismantling', 'Compatible with jibs and luffing attachments', 'Suitable for tight access locations', 'Ideal for short-duration and fast-track projects'],
         capacity: ['Light to Medium Duty: 60–220 MT', 'Heavy Duty: 250–360 MT', 'Ultra Heavy Duty: 400–800 MT']
     },
     {
@@ -40,7 +38,6 @@ const services: ServiceSection[] = [
         image: crawlerImg,
         overview: 'Our crawler cranes are built for heavy industrial lifting, long-term deployment, and operations on uneven or soft ground. These cranes deliver exceptional stability and load-handling capability for complex projects.',
         applications: ['Power plants and refineries', 'Steel plants and cement plants', 'Large infrastructure projects', 'Modular construction and heavy assemblies', 'Long-duration site deployments'],
-        capabilities: ['Track-mounted for superior stability', 'Capable of lifting and moving loads simultaneously', 'Ideal for continuous heavy lifting operations', 'Suitable for restricted ground conditions', 'Preferred for large-scale EPC projects'],
         capacity: ['Light to Medium Duty: 60–220 MT', 'Heavy Duty: 250–360 MT', 'Ultra Heavy Duty: 400–800 MT']
     },
     {
@@ -51,7 +48,6 @@ const services: ServiceSection[] = [
         image: stadiumImg,
         overview: 'SB Cranes specializes in heavy lifting and precision erection services for large, high-value, and critical components. Our team handles every stage — from lift planning to final placement — with uncompromising safety and accuracy.',
         applications: ['Structural erection', 'Equipment installation', 'Vessel, reactor, and column lifts', 'Modular assembly', 'Complex tandem and multi-crane lifts'],
-        capabilities: ['Detailed lift studies and method statements', 'Engineered rigging solutions', 'Skilled operators and supervisors', 'Real-time coordination with project teams'],
         capacity: []
     },
     {
@@ -62,7 +58,6 @@ const services: ServiceSection[] = [
         image: refineryImg,
         overview: 'We provide round-the-clock crane support for plant shutdowns and maintenance activities, where timelines are tight and safety is critical. Our teams are trained to work efficiently in live and high-risk industrial environments.',
         applications: ['Shutdown crane deployment', 'Equipment removal and replacement', 'Maintenance lifting support', 'Emergency mobilization', 'Permit-to-work compliance'],
-        capabilities: ['24×7 availability', 'Fast crane mobilization', 'Strict safety and refinery protocols', 'Minimal downtime for plant operations'],
         capacity: ['Refineries', 'Power plants', 'Fertilizer and chemical plants', 'Heavy industrial facilities']
     },
     {
@@ -73,7 +68,6 @@ const services: ServiceSection[] = [
         image: towerImg,
         overview: 'SB Cranes delivers end-to-end lifting solutions for large infrastructure and industrial developments across India. We work closely with EPC contractors to ensure seamless crane deployment throughout the project lifecycle.',
         applications: ['Bridges and flyovers', 'Metro and rail projects', 'Stadiums and public infrastructure', 'Industrial plant construction', 'Large civil and structural works'],
-        capabilities: ['Crane selection and planning', 'On-site execution support', 'Long-term project deployment', 'Integrated lifting and logistics coordination'],
         capacity: []
     },
     {
@@ -84,7 +78,6 @@ const services: ServiceSection[] = [
         image: heroBg,
         overview: 'Our heavy cargo and ODC transportation services ensure safe and controlled movement of oversized and overweight cargo. Supported by our in-house trailers and axle lines, we provide complete logistics solutions.',
         applications: ['ODC (Over-Dimensional Cargo) transport', 'Heavy machinery movement', 'Crane and equipment transportation', 'Plant relocation support', 'Long-distance and inter-state movement'],
-        capabilities: ['Heavy-duty trailers and axle configurations', 'Experienced transport planning team', 'Route surveys and compliance support', 'Integrated lifting + transport execution'],
         capacity: ['Industrial equipment suppliers', 'EPC contractors', 'Power and refinery projects', 'Infrastructure developments']
     }
 ];
@@ -180,7 +173,7 @@ export default function Services() {
                                                </p>
                                            </motion.div>
 
-                                           {/* Sleek Chips for Applications & Capabilities */}
+                                           {/* Sleek chips for service applications */}
                                            <motion.div 
                                                initial={{ opacity: 0, y: 30 }}
                                                whileInView={{ opacity: 1, y: 0 }}

@@ -1,6 +1,6 @@
 
-const refineryImg = '/updated_images/refinery_project.png';
-const stadiumImg = '/updated_images/stadium_project.png';
+const refineryImg = '/updated_images/refinery.png';
+const stadiumImg = '/updated_images/stadium.png';
 const windImg = '/updated_images/wind-farm.jpg';
 import { Link } from 'react-router-dom';
 const towerCraneImg = '/updated_images/tower-crane.jpg';
@@ -51,11 +51,12 @@ export default function ProjectGallery() {
     ];
 
     return (
-        <section id="projects" className="bg-dark-slate py-16 md:py-20">
+        <section id="projects" className="bg-[#08111f] py-16 md:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-12 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
                     <div>
-                        <h2 className="text-4xl font-bold uppercase tracking-tighter text-white font-header md:text-5xl">
+                        <span className="mb-3 block text-xs font-black uppercase tracking-[0.24em] text-brand-red">SB Cranes Portfolio</span>
+                        <h2 className="text-4xl font-black uppercase tracking-tight text-white font-header md:text-6xl">
                             Our <span className="text-brand-red">Projects</span>
                         </h2>
                         <div className="mt-2 h-1 w-24 bg-industrial-blue"></div>
@@ -68,15 +69,15 @@ export default function ProjectGallery() {
                         <Link
                             to={`/project/${project.slug}`}
                             key={project.id}
-                            className="group flex items-stretch bg-gray-800 border border-gray-700 rounded-lg overflow-hidden shadow-lg hover:border-brand-red transition-all duration-300"
+                            className="group flex items-stretch overflow-hidden rounded-lg border border-white/10 bg-white/[0.06] shadow-lg transition-all duration-300 hover:border-brand-red hover:bg-white/[0.09]"
                         >
                             {/* Image - Conditional Order */}
                             <div className={`w-32 h-auto flex-shrink-0 bg-cover bg-center ${index % 2 === 1 ? 'order-2' : 'order-1'}`} style={{ backgroundImage: `url('${project.image}')` }}></div>
 
                             {/* Content - Conditional Order */}
                             <div className={`p-4 flex flex-col justify-center flex-1 ${index % 2 === 1 ? 'order-1 text-right' : 'order-2 text-left'}`}>
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-brand-red mb-1">{project.category}</span>
-                                <h3 className="text-lg font-bold uppercase text-white font-header leading-tight mb-2 group-hover:text-brand-red transition-colors">{project.title}</h3>
+                                <span className="text-[10px] font-black uppercase tracking-[0.22em] text-brand-red mb-1">{project.category}</span>
+                                <h3 className="text-lg font-black uppercase text-white font-header leading-tight mb-2 tracking-tight group-hover:text-brand-red transition-colors">{project.title}</h3>
                                 <div className="h-0.5 w-8 bg-gray-600 mb-2 group-hover:bg-brand-red transition-colors inline-block"></div>
                             </div>
                         </Link>
@@ -89,15 +90,15 @@ export default function ProjectGallery() {
                         <Link
                             to={`/project/${project.slug}`}
                             key={project.id}
-                            className={`group relative overflow-hidden bg-gray-800 block ${project.desktopClasses}`}
+                            className={`group relative overflow-hidden rounded-lg bg-gray-800 block shadow-xl ring-1 ring-white/10 ${project.desktopClasses}`}
                         >
-                            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${project.image}')` }}></div>
-                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-90 transition-opacity"></div>
+                            <div className="absolute inset-0 bg-cover bg-center brightness-[1.12] transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${project.image}')` }}></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent opacity-80 transition-opacity group-hover:opacity-70"></div>
                             <div className="absolute bottom-0 left-0 p-6">
-                                <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-brand-red">{project.category}</span>
-                                <h3 className={`font-bold uppercase text-white font-header ${project.desktopClasses.includes('span-2') ? 'text-2xl lg:text-3xl' : 'text-xl'}`}>{project.title}</h3>
+                                <span className="mb-2 block text-xs font-black uppercase tracking-[0.22em] text-brand-red">{project.category}</span>
+                                <h3 className={`font-black uppercase tracking-tight text-white font-header ${project.desktopClasses.includes('span-2') ? 'text-2xl lg:text-4xl' : 'text-xl lg:text-2xl'}`}>{project.title}</h3>
                                 {project.description && (
-                                    <p className="mt-2 text-xs lg:text-sm text-gray-300 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 line-clamp-3">
+                                    <p className="mt-3 max-w-xl text-sm font-medium leading-relaxed text-gray-200 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 line-clamp-3">
                                         {project.description}
                                     </p>
                                 )}

@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { Download, Facebook, Instagram, Linkedin, MapPin, Mail, Phone } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 // import textureBg from '../assets/images/texture_bg.png';
 
 export default function Footer() {
@@ -24,24 +25,30 @@ export default function Footer() {
                     {/* Column 1: Logo & Mission */}
                     <div>
                         <div className="flex items-center gap-3 mb-6">
-                            <h2 className="text-4xl font-black uppercase tracking-tighter text-white font-header">SB Cranes</h2>
+                            <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-white/10 bg-white p-2 shadow-xl">
+                                <img src={logo} alt="SB Cranes logo" className="h-full w-full object-contain" />
+                            </div>
+                            <div>
+                                <span className="block text-[10px] font-black uppercase tracking-[0.28em] text-brand-red">Heavy Lifting Solutions</span>
+                                <h2 className="text-4xl font-black uppercase tracking-tight text-white font-header leading-none">SB Cranes</h2>
+                            </div>
                             <div className="h-3 w-3 bg-brand-red rounded-full shadow-[0_0_15px_rgba(220,38,38,0.8)]"></div>
                         </div>
-                        <p className="mb-8 text-gray-400 leading-relaxed max-w-xs text-sm border-l-2 border-brand-red/50 pl-4 py-1">
+                        <p className="mb-8 text-gray-300 leading-relaxed max-w-xs text-sm font-medium border-l-2 border-brand-red/50 pl-4 py-1">
                             Engineered lifting and transport solutions designed for absolute precision and uncompromising safety.
                         </p>
                         <div className="flex gap-4">
                             {/* Socials */}
-                            <a href="#" className="group flex h-12 w-12 items-center justify-center bg-white/5 hover:bg-brand-red border border-white/10 hover:border-brand-red hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all duration-300 rounded-lg"><Facebook className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /></a>
-                            <a href="#" className="group flex h-12 w-12 items-center justify-center bg-white/5 hover:bg-brand-red border border-white/10 hover:border-brand-red hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all duration-300 rounded-lg"><Instagram className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /></a>
-                            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="group flex h-12 w-12 items-center justify-center bg-white/5 hover:bg-[#0A66C2] border border-white/10 hover:border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.4)] transition-all duration-300 rounded-lg"><Linkedin className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /></a>
+                            <a href="#" aria-label="Facebook" className="group flex h-12 w-12 items-center justify-center bg-white/5 hover:bg-brand-red border border-white/10 hover:border-brand-red hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all duration-300 rounded-lg"><Facebook className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /></a>
+                            <a href="#" aria-label="Instagram" className="group flex h-12 w-12 items-center justify-center bg-white/5 hover:bg-brand-red border border-white/10 hover:border-brand-red hover:shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all duration-300 rounded-lg"><Instagram className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /></a>
+                            <a href="https://www.linkedin.com/search/results/companies/?keywords=SB%20Cranes" aria-label="LinkedIn" target="_blank" rel="noreferrer" className="group flex h-12 w-12 items-center justify-center bg-white/5 hover:bg-[#0A66C2] border border-white/10 hover:border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.4)] transition-all duration-300 rounded-lg"><Linkedin className="h-5 w-5 text-gray-300 group-hover:text-white transition-colors" /></a>
                         </div>
                     </div>
 
                     {/* Column 2: Quick Links */}
                     <div>
-                        <h3 className="mb-8 text-sm font-bold uppercase tracking-widest text-brand-red">Quick Links</h3>
-                        <ul className="space-y-4 text-sm font-medium text-gray-300">
+                        <h3 className="mb-8 text-sm font-black uppercase tracking-[0.22em] text-brand-red">Quick Links</h3>
+                        <ul className="space-y-4 text-sm font-semibold text-gray-300">
                             <li><Link to="/fleet" className="hover:text-white hover:underline decoration-brand-red underline-offset-4 transition-all">Equipment Fleet</Link></li>
                             <li><Link to="/projects" className="hover:text-white hover:underline decoration-brand-red underline-offset-4 transition-all">Featured Projects</Link></li>
                             <li><Link to="/about" className="hover:text-white hover:underline decoration-brand-red underline-offset-4 transition-all">About Us</Link></li>
@@ -52,7 +59,7 @@ export default function Footer() {
 
                     {/* Column 3: Contact Details */}
                     <div>
-                        <h3 className="mb-8 text-xs font-black uppercase tracking-[0.2em] text-white border-b border-white/10 pb-4 inline-block">Contact Us</h3>
+                        <h3 className="mb-8 text-xs font-black uppercase tracking-[0.22em] text-white border-b border-white/10 pb-4 inline-block">Contact SB Cranes</h3>
                         <ul className="space-y-6 text-sm text-gray-400">
                             <li className="flex gap-4 group cursor-default">
                                 <div className="p-3 bg-white/5 rounded-lg group-hover:bg-brand-red/10 transition-colors shrink-0">
@@ -87,7 +94,7 @@ export default function Footer() {
                             <div className="absolute inset-0 bg-gradient-to-br from-brand-red/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
                             <div className="relative z-10">
-                                <h3 className="mb-4 text-2xl font-black uppercase tracking-tighter text-white font-header leading-tight">Company<br/>Profile</h3>
+                                <h3 className="mb-4 text-2xl font-black uppercase tracking-tight text-white font-header leading-tight">SB Cranes<br/>Profile</h3>
                                 <div className="w-12 h-1 bg-brand-red mb-6"></div>
                                 <p className="mb-8 text-gray-400 text-sm font-medium">
                                     Get our detailed equipment specification guide and safety certifications.

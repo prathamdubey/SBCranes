@@ -288,7 +288,13 @@ export default function PlanYourLiftModal({ isOpen, onClose }: PlanYourLiftModal
 
                                     <div className="space-y-1">
                                         <label className="text-xs font-bold uppercase text-gray-600">Message / Additional Details</label>
-                                        <textarea name="message" rows={4} className="w-full bg-gray-100 border-b-2 border-transparent focus:border-industrial-blue px-4 py-3 outline-none transition-colors resize-none" onChange={handleChange} />
+                                        <textarea
+                                            name="message"
+                                            rows={5}
+                                            placeholder="Share load details, lift radius, site conditions, schedule, and any access constraints."
+                                            className="w-full resize-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-4 text-sm leading-relaxed shadow-inner outline-none transition-all placeholder:text-gray-400 focus:border-industrial-blue focus:bg-white focus:ring-4 focus:ring-industrial-blue/10"
+                                            onChange={handleChange}
+                                        />
                                     </div>
 
                                     <button
