@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-const heroBg = '/updated_images/hydrolic-crane.jpeg';
-const heroBgm = '/updated_images/mobile-crane.webp';
-const crawlerImg = '/updated_images/crawler-crane.webp';
+const heroBg = '/updated_images/img3.jfif';
+const heroBgm = '/updated_images/img2.jfif';
+const crawlerImg = '/updated_images/img1.jfif';
 
 const tabs = [
     {

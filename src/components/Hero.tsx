@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Truck, ShieldCheck, MapPin, ArrowRight } from 'lucide-react';
+import { Truck, ShieldCheck, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 // Using the real video and images provided by the client
 const heroSlides = [
@@ -184,6 +184,24 @@ export default function Hero() {
                             </div>
                         </div>
                     ))}
+                </motion.div>
+
+                {/* Scroll Down Arrow */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2, duration: 0.8 }}
+                    className="absolute left-1/2 -translate-x-1/2 z-20 bottom-[300px] sm:bottom-[120px]"
+                >
+                    <motion.button 
+                        onClick={() => document.getElementById('fleet')?.scrollIntoView({ behavior: 'smooth' })}
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-red text-white shadow-[0_0_20px_rgba(244,63,94,0.4)] transition-all hover:scale-110 hover:bg-white hover:text-brand-red hover:shadow-[0_0_25px_rgba(255,255,255,0.6)]"
+                        aria-label="Scroll to Fleet"
+                    >
+                        <ChevronDown className="h-6 w-6" />
+                    </motion.button>
                 </motion.div>
             </div>
         </div>
