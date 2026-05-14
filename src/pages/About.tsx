@@ -9,10 +9,10 @@ import {
   HardHat,
 } from "lucide-react";
 const heroBg = "/crane_images/Photo from Himanshu(6).jpg";
-const reliabilityImg = "../../public/sb cranes website pics/image copy 6.png";
-const IntegrityImg = "../../public/sb cranes website pics/image copy 8.png";
-const SafetyImg = "../../public/sb cranes website pics/image copy 13.png";
-const excellenceImg = "../../public/sb cranes website pics/image copy 9.png";
+const reliabilityImg = "/sb cranes website pics/image copy 6.png";
+const IntegrityImg = "/sb cranes website pics/image copy 8.png";
+const SafetyImg = "/sb cranes website pics/image copy 13.png";
+const excellenceImg = "/sb cranes website pics/image copy 9.png";
 const crawlerImg = "/crane_images/about1.png";
 // const refineryImg = "/crane_images/Photo from Himanshu(10).jpg";
 
