@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { CheckCircle2, Award, ShieldCheck, Target, TrendingUp, HardHat } from 'lucide-react';
 const heroBg = '/crane_images/Photo from Himanshu(6).jpg';
-const crawlerImg = '/crane_images/Photo from Himanshu(7).jpg';
+const reliabilityImg = '/crane_images/about2.png';
+const crawlerImg = '/crane_images/about1.png';
 const stadiumImg = '/crane_images/Photo from Himanshu(8).jpg';
 const refineryImg = '/crane_images/Photo from Himanshu(10).jpg';
 
@@ -177,7 +178,7 @@ export default function About({ onOpenModal }: AboutProps) {
                                 title: 'Reliability',
                                 icon: ShieldCheck,
                                 desc: 'We deliver dependable performance with on-time delivery and consistent service. Our clients trust us to be there when it matters most, ensuring their projects never face unexpected downtime due to equipment failure.',
-                                image: heroBg
+                                image: reliabilityImg
                             },
                             {
                                 title: 'Integrity',
