@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
-import heroBg from '../assets/updated_images/mobile-crane.webp';
+import heroBg from '../../public/sb cranes website pics/img9.png';
 import heavytransport from '../../public/sb cranes website pics/image copy 13.png';
-import crawlerImg from '../assets/images/crawler_crane.png';
+import crawlerImg from '../../public/updated_images/img1.png';
 
 
 // Placeholder data for fleet categories - replacing actual brochure content for now

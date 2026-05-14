@@ -3,12 +3,12 @@ import { ArrowRight, Truck, Cog, Anchor, HardHat, Factory } from 'lucide-react';
 
 // Import images
 import heroBg from '../assets/images/hero_bg.png';
-import mobileCrane from '../../public/updated_images/img2.jfif';
+import mobileCrane from '../../public/sb cranes website pics/img4.png';
 import transport from '../../public/sb cranes website pics/image copy 14.png';
-import crawlerImg from '../assets/images/crawler_crane.png';
-import refineryImg from '../assets/images/hmel.png';
-import stadiumImg from '../assets/images/jlm2.png';
-import towerImg from '../../public/updated_images/hydrolic-crane.jpeg';
+import crawlerImg from '../../public/sb cranes website pics/img11.png';
+import refineryImg from '../../public/sb cranes website pics/img2.png';
+import stadiumImg from '../../public/sb cranes website pics/img1.png';
+import towerImg from '../../public/sb cranes website pics/img3.png';
 
 interface ServiceSection {
     id: string;
@@ -146,7 +146,7 @@ export default function Services() {
                                            className="w-full lg:w-1/2 relative group"
                                        >
                                            <div className={`absolute inset-0 bg-brand-red/5 rounded-[3rem] transform transition-transform duration-700 group-hover:bg-brand-red/10 ${isEven ? 'translate-x-6' : '-translate-x-6'} translate-y-6 -z-10`} />
-                                           <div className="relative aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl">
+                                           <div className="relative aspect-[1/1] rounded-[3rem] overflow-hidden shadow-2xl">
                                                 <div className="absolute inset-0 bg-dark-slate/20 group-hover:bg-transparent transition-colors duration-700 z-10" />
                                                 <img src={service.image} alt={service.title} className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000 ease-out" />
                                                 <div className="absolute top-6 left-6 md:top-8 md:left-8 z-20 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-xl transition-transform duration-500 group-hover:-translate-y-2">

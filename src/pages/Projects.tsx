@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
-import heroBg from '../assets/images/hero_bg.png';
-import crawlerImg from '../assets/images/crawler_crane.png';
+import heroBg from '../../public/sb cranes website pics/img12.png';
+import HighRise from '../../public/sb cranes website pics/img14.png';
+import crawlerImg from '../../public/sb cranes website pics/img13.png';
+import REFINERY from '../../public/sb cranes website pics/img15.png';
 
 // Import Client Logos
 import hmel from '../assets/keyLeaders/HMEL.jpg';
@@ -63,7 +65,7 @@ const projects = [
             "High level of safety and execution control maintained throughout"
         ],
         highlight: "",
-        image: heroBg,
+        image: HighRise,
         partnerLogo: null
     },
     {
@@ -78,7 +80,7 @@ const projects = [
         ],
         outcomes: [],
         highlight: "",
-        image: crawlerImg,
+        image: REFINERY,
         partnerLogo: hmel
     }
 ];
