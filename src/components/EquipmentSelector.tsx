@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-const heroBg = '/updated_images/img3.jfif';
+const heroBg = '../../public/sb cranes website pics/img16.png';
 const heroBgm = '/updated_images/img2.jfif';
 const crawlerImg = '/updated_images/img1.jfif';
 
