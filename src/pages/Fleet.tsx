@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
 import heroBg from '../assets/updated_images/mobile-crane.webp';
+import heavytransport from '../../public/sb cranes website pics/image copy 13.png';
 import crawlerImg from '../assets/images/crawler_crane.png';
 
 
@@ -24,7 +25,7 @@ const fleetCategories = [
         title: "Heavy Transport",
         description: "Specialized trailers and axles for ODC and heavy cargo movement.",
         specs: ["Hydraulic Axles", "Low Bed Trailers", "Pullers & Prime Movers"],
-        image: heroBg,
+        image: heavytransport,
         id: "transport"
     }
 ];

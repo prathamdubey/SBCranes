@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Truck, ShieldCheck, MapPin, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const SLIDE_DURATION = 7000;
+
 // Using the real video and images provided by the client
 const heroSlides = [
     {
@@ -81,13 +84,13 @@ export default function Hero() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentSlideIndex((prev) => (prev >= heroSlides.length - 1 ? 1 : prev + 1));
-        }, 8000); // Change bg every 8 seconds
+            setCurrentSlideIndex((prev) => (prev + 1) % heroSlides.length);
+        }, SLIDE_DURATION);
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className="relative min-h-[760px] h-[100svh] w-full overflow-hidden bg-dark-slate sm:min-h-[720px]">
+        <section className="relative min-h-[760px] h-[100svh] w-full overflow-hidden bg-dark-slate sm:min-h-[720px]">
             {/* Background Slideshow */}
             <AnimatePresence initial={false}>
                 {currentSlide.type === 'video' ? (
@@ -97,7 +100,7 @@ export default function Hero() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1.2, ease: "easeInOut" }}
-                        className="absolute inset-0 z-0 h-full w-full object-cover  contrast-[1.18] saturate-[1.28]"
+                        className="absolute inset-0 z-0 h-full w-full object-cover contrast-[1.18] saturate-[1.28]"
                         src={currentSlide.src}
                         autoPlay
                         muted
@@ -124,29 +127,51 @@ export default function Hero() {
             <div className="absolute inset-0 z-0 bg-gradient-to-t from-dark-slate via-dark-slate/20 to-transparent" />
 
             {/* Main Content */}
-            <div className="relative z-10 flex h-full flex-col justify-center pt-24 pb-80 sm:pb-52 md:pb-32">
+            <div className="relative z-10 flex h-full flex-col justify-center pt-24 pb-[23rem] sm:pb-52 md:pb-36">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={currentSlideIndex}
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 30 }}
-                            transition={{ duration: 0.6, ease: "easeInOut" }}
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -18 }}
+                            transition={{ duration: 0.75, ease: "easeOut" }}
+                            className="max-w-5xl"
                         >
                             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-white/25 bg-white/15 px-4 py-2 text-[11px] font-black uppercase tracking-[0.22em] text-white shadow-lg backdrop-blur-md">
                                 <span className="h-2 w-2 rounded-full bg-brand-red shadow-[0_0_16px_rgba(244,63,94,0.9)]" />
                                 SB Cranes
                             </div>
-                            <h1 className="max-w-5xl text-4xl font-black uppercase leading-[0.95] tracking-tight text-white drop-shadow-2xl font-header break-words sm:text-6xl md:text-7xl lg:text-8xl">
+                            <h1 className="text-[clamp(2.4rem,11vw,5.8rem)] font-black uppercase leading-[0.95] tracking-normal text-white drop-shadow-2xl font-header break-words sm:text-6xl md:text-7xl lg:text-8xl">
                                 {currentSlide.topText} <br />
                                 <span className="text-brand-red">{currentSlide.highlightText}</span> {currentSlide.bottomText}
                             </h1>
-                            <p className="mt-6 max-w-2xl border-l-4 border-brand-red bg-black/25 py-3 pl-5 pr-4 text-base font-medium leading-relaxed text-gray-100 shadow-xl backdrop-blur-sm sm:text-lg">
+                            <p className="mt-5 max-w-2xl border-l-4 border-brand-red bg-black/25 py-3 pl-5 pr-4 text-sm font-medium leading-relaxed text-gray-100 shadow-xl backdrop-blur-sm sm:mt-6 sm:text-lg">
                                 {currentSlide.desc}
                             </p>
                         </motion.div>
                     </AnimatePresence>
+                </div>
+
+                <div className="absolute bottom-[19.25rem] left-0 z-20 w-full sm:bottom-[7.35rem] md:bottom-[7.75rem]">
+                    <div className="container mx-auto flex items-center justify-center gap-3 px-4 sm:px-6 lg:px-8">
+                        {heroSlides.map((slide, index) => {
+                            const isActive = index === currentSlideIndex;
+
+                            return (
+                                <button
+                                    key={`${slide.highlightText}-${index}`}
+                                    type="button"
+                                    onClick={() => setCurrentSlideIndex(index)}
+                                    className={`h-3 rounded-full border border-white/70 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand-red focus:ring-offset-2 focus:ring-offset-dark-slate ${
+                                        isActive ? 'w-10 bg-brand-red shadow-[0_0_18px_rgba(244,63,94,0.6)]' : 'w-3 bg-white/35 hover:bg-white/80'
+                                    }`}
+                                    aria-label={`Show hero slide ${index + 1}`}
+                                    aria-current={isActive ? 'true' : undefined}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
 
                 {/* Info Bar - Anchored to bottom */}
@@ -191,7 +216,7 @@ export default function Hero() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.2, duration: 0.8 }}
-                    className="absolute left-1/2 -translate-x-1/2 z-20 bottom-[300px] sm:bottom-[120px]"
+                    className="absolute bottom-[20.9rem] right-4 z-20 hidden sm:bottom-[8.4rem] sm:right-6 md:block lg:right-8"
                 >
                     <motion.button 
                         onClick={() => document.getElementById('fleet')?.scrollIntoView({ behavior: 'smooth' })}
@@ -204,6 +229,6 @@ export default function Hero() {
                     </motion.button>
                 </motion.div>
             </div>
-        </div>
+        </section>
     );
 }

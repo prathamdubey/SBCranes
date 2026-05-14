@@ -3,10 +3,12 @@ import { ArrowRight, Truck, Cog, Anchor, HardHat, Factory } from 'lucide-react';
 
 // Import images
 import heroBg from '../assets/images/hero_bg.png';
+import mobileCrane from '../../public/updated_images/img2.jfif';
+import transport from '../../public/sb cranes website pics/image copy 14.png';
 import crawlerImg from '../assets/images/crawler_crane.png';
 import refineryImg from '../assets/images/hmel.png';
 import stadiumImg from '../assets/images/jlm2.png';
-import towerImg from '../assets/images/buildingcrae.png';
+import towerImg from '../../public/updated_images/hydrolic-crane.jpeg';
 
 interface ServiceSection {
     id: string;
@@ -25,7 +27,7 @@ const services: ServiceSection[] = [
         title: 'Mobile Crane Rental',
         shortTitle: 'Mobile Cranes',
         icon: Truck,
-        image: heroBg,
+        image: mobileCrane,
         overview: 'Our mobile crane rental services are designed for fast mobilization, flexibility, and high-performance lifting across infrastructure, industrial, and time-sensitive projects. With a modern fleet and experienced operators, SB Cranes ensures safe and efficient execution even in constrained or urban environments.',
         applications: ['Plant installation and maintenance', 'Infrastructure construction', 'Urban construction sites', 'Equipment loading and unloading', 'Emergency and time-critical lifts'],
         capacity: ['Light to Medium Duty: 60–220 MT', 'Heavy Duty: 250–360 MT', 'Ultra Heavy Duty: 400–800 MT']
@@ -75,7 +77,7 @@ const services: ServiceSection[] = [
         title: 'Heavy Cargo Transport',
         shortTitle: 'Transport',
         icon: Truck,
-        image: heroBg,
+        image: transport,
         overview: 'Our heavy cargo and ODC transportation services ensure safe and controlled movement of oversized and overweight cargo. Supported by our in-house trailers and axle lines, we provide complete logistics solutions.',
         applications: ['ODC (Over-Dimensional Cargo) transport', 'Heavy machinery movement', 'Crane and equipment transportation', 'Plant relocation support', 'Long-distance and inter-state movement'],
         capacity: ['Industrial equipment suppliers', 'EPC contractors', 'Power and refinery projects', 'Infrastructure developments']
