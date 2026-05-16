@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
 import heroBg from '../../public/sb cranes website pics/img9.png';
 import heavytransport from '../../public/sb cranes website pics/image copy 13.png';
-import crawlerImg from '../../public/updated_images/img1.png';
+import crawlerImg from '../../public/sb cranes website pics/img17.png';
 
 
 // Placeholder data for fleet categories - replacing actual brochure content for now
@@ -11,14 +11,14 @@ const fleetCategories = [
         title: "Mobile Cranes",
         description: "Versatile and rapid deployment cranes for all-terrain operations.",
         specs: ["Capacity: 20T - 700T", "Boom Length: Up to 80m", "All-Terrain & Rough Terrain"],
-        image: heroBg,
+        image: crawlerImg,
         id: "mobile"
     },
     {
         title: "Crawler Cranes",
         description: "Heavy-duty lifting with superior stability and load capacity.",
         specs: ["Capacity: 75MT - 800MT", "Configuration: Lattice Boom", "Superlift Attachments"],
-        image: crawlerImg,
+        image: heroBg,
         id: "crawler"
     },
     {
